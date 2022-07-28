@@ -7,7 +7,6 @@ const isvalid = require("is-valid-domain");
 const moment = require("moment");
 var arraydata = [];
 
-
 app.set("view engine", "ejs");
 app.use(bodyParser.json());
 app.use(express.static(__dirname + "/public"));
@@ -35,7 +34,7 @@ app.post("/domainchecker", async (req, res) => {
       ).format("YYYY-MM-DD HH:mm:ss");
       const registrar = data.registrar;
       const reg_country = data.techCountry;
-     
+
       res.send({
         url,
         created_date,
@@ -62,15 +61,17 @@ app.post("/domainchecker", async (req, res) => {
     }
   } catch (err) {
     if (err.errno == -3008) {
-      res.send("No such website exists enter the correct domain name without http/https");
+      res.send(
+        "No such website exists enter the correct domain name without http/https"
+      );
     } else {
       res.send(err);
     }
   }
 });
-app.get('/domain_list',(req,res)=>{
+app.get("/domain_list", (req, res) => {
   res.send(arraydata);
-})
+});
 app.listen(process.env.PORT || 3000, function () {
   console.log("SERVER STARTED PORT: 3000");
 });
