@@ -17,19 +17,20 @@
 <body>
   <div class="container">
     <h1>Domain Details</h1>
-    <% if(success!='' ){ %>
-      <div class="alert alert-success" role="alert">
-        <strong>Success!!</strong>
-      </div>
-      <% } %>
+    
         <form action="/domainchecker" method="post">
           <div class="mb-3">
             <label for="Domain Input" class="form-label">Domain</label>
-            <input type="text" class="form-control" id="" name="domain" placeholder="Domain Name" required>
+            <input type="text" class="form-control" id="" name="domain" placeholder="Domain Name">
           </div>
 
           <button type="submit" class="btn btn-primary">Search</button>
         </form>
+        <div style="margin-top:5px">
+          <a href="https://tranquil-tundra-22473.herokuapp.com/domain_list"><button type="submit" class="btn btn-primary">Current Database</button></a>
+        </div>
+        
+
   </div>
 
 
