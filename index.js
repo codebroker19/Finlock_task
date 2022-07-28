@@ -68,6 +68,6 @@ app.post("/domainchecker", async (req, res) => {
     }
   }
 });
-app.listen(3000, () => {
-  console.log("Server engaged on port 3000");
+app.listen(process.env.PORT || 3000, function () {
+  console.log("SERVER STARTED PORT: 3000");
 });
